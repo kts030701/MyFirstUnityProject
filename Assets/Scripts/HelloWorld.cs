@@ -5,47 +5,34 @@ public class HelloWorld : MonoBehaviour
 {
     void Start()
     {
-        int number = -123;
-        if (number > 0)
+        int a = 2;
+        int b = 2;
+        int count = 0;
+        while (a <= 1000)
         {
-            Debug.Log("양수");
+            a *= b;
+            count++;
         }
-        else if (number < 0)
+        Debug.Log(count + "번 곱하면 1000을 넘습니다.");
+       
+        for (int i = 1; i < 10; i += 2)
         {
-            Debug.Log("음수");
-        }
-        else
-        {
-            Debug.Log(0);
+            string stars = "";
+            for (int j = 0; j < i;  j++)
+            {
+                stars += "*";
+            }
+            Debug.Log(stars);
         }
 
-        int year = 2026;
-        if (year % 4 == 0) 
+        for (int c = 2; c < 10; c++)
         {
-             Debug.Log("윤년");
+            for (int d = 1; d < 10; d++)
+            {
+                int answer = c * d;
+                Debug.Log(c + "*" + d + "=" + answer);
+            }
         }
-        else
-        {
-             Debug.Log("평년");
-        }
-        string cal = "-";
-        int num1 = 2;
-        int num2 = 7;
-        switch (cal)
-        {
-            case "+":
-                Debug.Log(num1 + num2);
-                    break;
-            case "-":
-                Debug.Log(num1 - num2);
-                    break;
-            case "*":
-                Debug.Log(num1 * num2);
-                    break;
-            case "/":
-                Debug.Log(num1 / num2);
-                    break;
-        }
-      
-    }  
+
+    }
  }
