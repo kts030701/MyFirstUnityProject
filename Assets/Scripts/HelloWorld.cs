@@ -6,23 +6,33 @@ public class HelloWorld : MonoBehaviour
 {
     void Start()
     {
-        Dictionary <string, string> 한영사전 = new Dictionary<string, string> ();
-        한영사전.Add("쥐", "mouse");
-        한영사전.Add("잔", "cup");
-        한영사전.Add("손", "hand");
-        한영사전.Add("물", "water");
-        한영사전.Add("발", "foot");
+        List<int> a = new List<int>();
+        a.Add(22);
+        a.Add(3);
+        a.Add(14);
+        a.Add(8);
+        a.Add(5);
+        a.Add(12);
+        a.Add(3);
+        a.Add(19);
+        a.Add(2);
+        a.Add(1);
 
-        Dictionary<string, string> 영한사전 = new Dictionary<string, string>();
-
-        foreach (string key in 한영사전.Keys)
+        for (int i = 0; i < a.Count-1; i++)
         {
-            영한사전.Add(한영사전[key], key);
+            for (int j=i+1; j < a.Count; j++)
+            {
+                if (a[i] > a[j])
+                {
+                int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+                }
+            }
         }
-
-        foreach (string key in 영한사전.Keys)
+        foreach (int i in a)
         {
-            Debug.Log(key + " : " + 영한사전[key]);
+            Debug.Log(i);
         }
     }
 
